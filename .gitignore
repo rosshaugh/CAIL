@@ -15,3 +15,11 @@
 *.exe
 *.out
 *.app
+
+# Eclipse
+.cproject
+./settings
+
+# Make
+./bin
+./lib

@@ -101,8 +101,17 @@ namespace CAIL{
         m_pcix_dir = "/sys/bus/pci_express/devices/";
         m_config_file = "/config";
 
+        const char * linux_pci_id_file_loc = "/usr/share/misc/pci.ids";
+        const char * rhel_pci_id_file_loc = "/usr/share/hwdata/pci.ids";
+
         /* TODO: Need to consider multiple possible locations. Also, get this from web if not available / out of date? */
-        m_pci_id_file_loc = "/usr/share/misc/pci.ids";
+        struct stat st_buffer;
+        if(stat(linux_pci_id_file_loc, &st_buffer) == 0){
+            m_pci_id_file_loc = linux_pci_id_file_loc;
+        }
+        else{
+            m_pci_id_file_loc = rhel_pci_id_file_loc;
+        }
 
         /* All we are really interested in so far. */
         /* TODO: Need to check header type value to determine offset of subsystem[id|vendorid] */

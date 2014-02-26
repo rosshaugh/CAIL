@@ -36,7 +36,7 @@ CAILEXPSRC=$(CURDIR)/src/cail/CAILException.cc
 CAILEXPINC=$(CURDIR)/src/include/CAILException.h
 
 # Test command
-TEST=$(CURDIR)/bin/./cail -c
+TEST=$(CURDIR)/bin/./cail
 
 test: all
 	$(TEST)

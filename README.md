@@ -10,3 +10,4 @@ installed on their machine.
 The tool currently covers the following:
 
 1) PCI
+2) CPU (WIP)
