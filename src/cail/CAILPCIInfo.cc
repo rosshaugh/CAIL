@@ -231,9 +231,9 @@ namespace CAIL{
         std::ostringstream pci_str_builder;
 
         unsigned short   vend_id       	    = getSpecificWidthOctets(buff, TWOBYTE, m_VENDOR_ID_POS),
-                         subvend_id    	    = getSpecificWidthOctets(buff, TWOBYTE, m_SUB_VENDOR_ID_POS),
+                         //subvend_id    	    = getSpecificWidthOctets(buff, TWOBYTE, m_SUB_VENDOR_ID_POS),
                          dev_id        	    = getSpecificWidthOctets(buff, TWOBYTE, m_DEVICE_ID_POS),
-                         subdev_id     	    = getSpecificWidthOctets(buff, TWOBYTE, m_SUB_DEVICE_ID_POS),
+                         //subdev_id     	    = getSpecificWidthOctets(buff, TWOBYTE, m_SUB_DEVICE_ID_POS),
                          class_code_id  	= getSpecificWidthOctets(buff, ONEBYTE, m_CLASS_CODE_POS),
                          subclass_code_id 	= getSpecificWidthOctets(buff, ONEBYTE, m_SUBCLASS_CODE_POS),
                          progif_code_id 	= getSpecificWidthOctets(buff, ONEBYTE, m_PROGIF_CODE_POS),

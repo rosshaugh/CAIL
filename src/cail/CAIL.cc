@@ -12,9 +12,20 @@
 #include <vector>
 #endif
 
+int ShowUsage()
+{
+    std::cout << "\nYou need the supply at least one command line option.\n\n";
+    std::cout << "Available Options:\n\t-p - PCI setup\n\t-c - CPU setup\n\n";
+
+    return 0;
+}
+
 int main(int argc, char *argv[]){
 
     using namespace CAIL;
+
+    if(argc <= 1)
+        return ShowUsage();
 
     int opt;
     bool pci_flag, cpu_flag;
