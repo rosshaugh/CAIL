@@ -11,6 +11,9 @@ OPT=-O2
 #DBG=-g
 INCLUDER=-I$(CURDIR)/src/include/
 
+# Ensure directories exist
+MKDIR=mkdir -p
+
 # Valgrind settings.
 VALGRIND=valgrind --leak-check=full
 
@@ -41,7 +44,15 @@ TEST=$(CURDIR)/bin/./cail
 test: all
 	$(TEST)
 
-all: cail
+all: directories cail
+
+directories: libdir bindir
+
+libdir:
+	${MKDIR} ${LIBDIR}
+
+bindir:
+	${MKDIR} ${BINDIR}
 
 cail: $(CAILSRC) $(CAILINC) cailexception pciinfo cpuinfo
 	$(GPP) $(DBG) $(ARGS) $(OPT) $(INCLUDER) -o $(BINDIR)/$(BIN) $(CAILSRC) $(CAILLIBS)
